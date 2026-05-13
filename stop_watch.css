@@ -1,0 +1,50 @@
+body {
+    background: orange;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.container {
+    margin-top: 100px;
+}
+
+h1 {
+    color: white;
+    font-size: 40px;
+    letter-spacing: 3px;
+}
+
+.time {
+    font-size: 60px;
+    color: white;
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 25px;
+    margin: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#button-start {
+    background: green;
+    color: white;
+}
+
+#button-stop {
+    background: red;
+    color: white;
+}
+
+#button-reset {
+    background: white;
+    color: black;
+}
+
+button:hover {
+    opacity: 0.8;
+}
