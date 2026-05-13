@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Job Eligibility Checker</title>
+  <style>
+*{
+    background-color: burlywood;
+    margin: 0;
+    padding: 0;
+}
+#container{
+    width: 500px;
+    height: 400px;
+    margin: auto;
+    color: burlywood;
+    background-color: black;
+    margin-top: 50px;
+  
+}
+
+
+h2{
+    background-color: black;
+    color: burlywood;
+    text-align: center;
+    padding: 10px;
+}
+#input{
+    display:inline-block;
+    width: 300px;
+   text-align:left;
+   color: black;
+   margin-top: 60px;
+   margin-bottom: 30px;
+   margin-left: 100px; 
+   margin-right: 100px;
+   height: 150px;
+}
+button{
+    width: 100px;
+    height: 30px;
+    margin-left: 200px;}
+
+#result{
+    display: block;
+    margin-top: 10px;
+   text-align: center;
+    color: burlywood;
+    background-color: black;
+}
+</style>
+</head>
+<body>
+<div id="container">
+  <h2>Job Eligibility Checker</h2>
+<div id="input">
+  <p style="text-align: center; padding: 10px;">Select your highest educational qualification:</p>
+  <input type="radio" name="education" value="Illiterate"> Illiterate <br>
+  <input type="radio" name="education" value="HighSchool"> High School <br>
+  <input type="radio" name="education" value="UG"> UG <br>
+  <input type="radio" name="education" value="PG"> PG <br>
+  <input type="radio" name="education" value="Doctorate"> Doctorate <br><br>
+</div>
+  <button onclick="checkEligibility()">Check Eligibility</button>
+
+  <p id="result"></p>
+</div>
+  <script >
+
+function checkEligibility() {
+  let education = document.querySelector('input[name="education"]:checked');
+  let result;
+
+  if (!education) {
+    document.getElementById("result").innerText = "Please select an option";
+    return;
+  }
+
+  switch (education.value) {
+    case "HighSchool":
+    case "UG":
+      result = "Eligible for Job";
+      break;
+
+    case "Illiterate":
+    case "PG":
+    case "Doctorate":
+      result = "Not Eligible for Job";
+      break;
+
+    default:
+      result = "Invalid selection";
+  }
+
+  document.getElementById("result").innerText = result;
+}
+</script>
+</body>
+</html>
