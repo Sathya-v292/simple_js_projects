@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Learning Path way</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+      <h2>Check Given String is palindrom</h2>
+      <input type="text" id="input" placeholder="Enter a String">
+      <button type="submit" onclick="check()">Check Plaindrom</button>
+     <div id="result"></div>
+    </div>
+    <script>
+        function check(){
+          var str=document.getElementById("input").value.toLowerCase()
+          var str1=""    
+        for( var i=str.length-1;i>=0;i--){
+           str1+=str.charAt(i)
+        }
+       var result=document.getElementById("result")
+        if(str===str1){
+        result.innerHTML=str+" is a palindrom"}
+    else{
+        result.innerHTML=str+" is not a palindrom"
+    }
+        }
+    </script>
+</body>
+</html>
