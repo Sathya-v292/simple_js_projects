@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ep bill calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+      <h2>EB BILL CALCULATOR</h2>
+      <input type="number" id="input" placeholder="Enter unit">
+      <button type="submit" onclick="calculateEB()">Calculate Bill</button>
+     <div id="result"></div>
+    </div>
+    <script>
+       function calculateEB() {
+    let units = parseInt(document.getElementById("input").value);
+    let bill = 0;
+
+    if (units <= 50) {
+        bill = units * 0.75;
+    }
+    else if (units <= 150) {
+        bill = (50 * 0.75) + ((units - 50) * 1.00);
+    }
+    else if (units <= 250) {
+        bill = (50 * 0.75) + (100 * 1.00) + ((units - 150) * 1.30);
+    }
+    else {
+        bill = (50 * 0.75) + (100 * 1.00) + (100 * 1.30) + ((units - 250) * 1.50);
+    }
+
+    document.getElementById("result").innerText =
+        "EB Bill Amount = ₹ " + bill.toFixed(2);
+}
+    </script>
+</body>
+</html>
